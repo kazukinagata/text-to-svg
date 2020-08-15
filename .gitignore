@@ -1,6 +1,5 @@
 build/
-
-### Node.js ###
-
-/package-lock.json
+yarn-error.log
 /node_modules/
+package-lock.json
+yarn.lock
