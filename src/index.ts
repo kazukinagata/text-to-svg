@@ -2,7 +2,7 @@
  * Copyright (c) 2016 Hideki Shiro
  */
 
-import opentype from 'opentype.js'
+import * as opentype from 'opentype.js'
 
 export interface TextToSVGOptions {
   fontSize?: number
