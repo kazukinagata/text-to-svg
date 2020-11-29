@@ -15,6 +15,8 @@ export interface TextToSVGOptions {
   attributes?: {[x: string]: any}
 }
 
+const DEFAULT_FONT = require('path').join(__dirname, '../fonts/ipag.ttf');
+
 // Private method
 
 function parseAnchorOption(anchor: string) {
@@ -30,11 +32,11 @@ function parseAnchorOption(anchor: string) {
 export default class TextToSVG {
   constructor(private font: opentype.Font) {}
 
-  static loadSync(file: string) {
+  static loadSync(file: string = DEFAULT_FONT) {
     return new TextToSVG(opentype.loadSync(file))
   }
 
-  static load(url: string) {
+  static load(url: string = DEFAULT_FONT) {
     return new Promise<TextToSVG>((resolve, reject) => {
       opentype.load(url, (err, font) => {
         if (err) {
